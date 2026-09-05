@@ -1,0 +1,276 @@
+:root {
+  --phthalo: #0a3d2c;
+  --phthalo-deep: #06241a;
+  --phthalo-mid: #146b4f;
+  --paper: #f3efe4;
+  --ink: #10211b;
+  --muted: #3d5249;
+  --line: rgba(10, 61, 44, 0.16);
+  --max: 68rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+.skip {
+  position: absolute;
+  left: 0.75rem;
+  top: -3rem;
+  padding: 0.4rem 0.7rem;
+  background: var(--phthalo);
+  color: var(--paper);
+}
+
+.skip:focus {
+  top: 0.75rem;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.1rem 1.25rem;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--phthalo);
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-text strong {
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-text span {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  font-size: 0.92rem;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--phthalo);
+  border-bottom: 1px solid transparent;
+}
+
+.nav a:hover,
+.nav a:focus-visible {
+  border-bottom-color: var(--phthalo);
+}
+
+.hero {
+  background: var(--phthalo-deep);
+  color: var(--paper);
+  padding: 4.5rem 1.25rem 5rem;
+}
+
+.hero h1,
+.hero .lead,
+.hero .eyebrow,
+.hero .btn {
+  max-width: 38rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.eyebrow,
+.kicker {
+  margin: 0 0 0.85rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 1rem;
+  font-size: clamp(2rem, 5vw, 3.15rem);
+  line-height: 1.12;
+  font-weight: 600;
+}
+
+.lead {
+  margin: 0 0 1.75rem;
+  color: #d7e4dc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.15rem;
+  background: var(--paper);
+  color: var(--phthalo-deep);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: #fff;
+}
+
+.block {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 4rem 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.block-head {
+  margin-bottom: 1.5rem;
+}
+
+.kicker {
+  color: var(--phthalo-mid);
+}
+
+.block h2 {
+  margin: 0;
+  max-width: 22ch;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1.2;
+}
+
+.services {
+  display: grid;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.services li {
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--line);
+}
+
+.n {
+  display: block;
+  margin-bottom: 0.55rem;
+  color: var(--phthalo-mid);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+}
+
+.services h3,
+.contact h2 {
+  margin: 0 0 0.55rem;
+}
+
+.services p,
+.split p,
+.contact p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+.split {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.contact {
+  background: var(--phthalo);
+  color: var(--paper);
+  max-width: none;
+  padding-left: max(1.25rem, calc((100% - var(--max)) / 2 + 1.25rem));
+  padding-right: max(1.25rem, calc((100% - var(--max)) / 2 + 1.25rem));
+  border-top: 0;
+}
+
+.contact .kicker,
+.contact p {
+  color: #cfe0d6;
+}
+
+.contact .note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 1.2rem 1.25rem 1.6rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.foot p {
+  margin: 0;
+}
+
+@media (min-width: 800px) {
+  .services {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .split {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero {
+    padding-top: 3.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
