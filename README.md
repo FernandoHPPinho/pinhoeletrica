@@ -32,8 +32,9 @@ No hPanel do `.com`, use **Redirecionar domínio** (ou **Redirects**):
 
 Não aponte o `.com` para o GitHub. Um site no Pages só aceita um domínio; o outro deve só encaminhar.
 
-## Repositório
+## Repositório e Pages
 
-O código fica em um repositório **privado** no GitHub. Ninguém de fora vê os arquivos.
+Repositório público para o GitHub Pages. Não há telefone, e-mail, senha ou token nos arquivos.
 
-GitHub Pages grátis só publica repositório público. Com o código privado, o site no ar precisa de outra hospedagem (Hostinger Single é a mais barata) ou do GitHub Pro.
+Site: https://pinhoeletrica.com.br  
+Pages (enquanto o DNS não propaga): https://FernandoHPPinho.github.io/pinhoeletrica/
