@@ -1,21 +1,37 @@
 # Pinho Soluções em Eletricidade
 
-Site institucional de uma página — Limeira-SP e região.
+Site de uma página: [pinhoeletrica.com.br](https://pinhoeletrica.com.br)
 
-Serviços: instalação, manutenção e quadro elétrico.
+O domínio `pinhoeletrica.com` só redireciona para o `.com.br`.
 
-## Hospedagem mais acessível
+## DNS na Hostinger
 
-Para este site estático, a opção mais barata é **não pagar hospedagem**:
+### 1. pinhoeletrica.com.br → GitHub Pages
 
-1. Manter o domínio na Hostinger (você já comprou).
-2. Publicar o site de graça no **GitHub Pages**.
-3. Apontar o domínio da Hostinger para o GitHub.
+No hPanel do `.com.br`, abra **Domínios → DNS / Zona DNS** e deixe assim:
 
-Custo extra: R$ 0. Só o domínio continua sendo pago.
+| Tipo | Nome | Valor |
+|---|---|---|
+| A | `@` | `185.199.108.153` |
+| A | `@` | `185.199.109.153` |
+| A | `@` | `185.199.110.153` |
+| A | `@` | `185.199.111.153` |
+| CNAME | `www` | `SEU_USUARIO.github.io` |
 
-Se quiser e-mail `contato@seudominio` no mesmo lugar, aí sim vale o plano **Single** da Hostinger (o mais barato deles). Sem e-mail profissional, o GitHub Pages resolve.
+Apague registros A/AAAA/CNAME antigos do `@` e do `www` que apontem para a página de estacionamento da Hostinger. Sem isso o domínio não chega no GitHub.
+
+O `SEU_USUARIO.github.io` aparece depois do login no GitHub. Eu te passo o valor exato.
+
+### 2. pinhoeletrica.com → redireciona para o .com.br
+
+No hPanel do `.com`, use **Redirecionar domínio** (ou **Redirects**):
+
+- De: `pinhoeletrica.com` e `www.pinhoeletrica.com`
+- Para: `https://pinhoeletrica.com.br`
+- Tipo: permanente (301)
+
+Não aponte o `.com` para o GitHub. Um site no Pages só aceita um domínio; o outro deve só encaminhar.
 
 ## Publicar
 
-O repositório publica a pasta raiz pela branch `main`.
+Pasta raiz da branch `main` no GitHub Pages. Hospedagem do site: R$ 0. Você só paga os dois domínios.
