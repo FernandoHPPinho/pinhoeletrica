@@ -63,8 +63,9 @@ a {
 }
 
 .brand-mark {
-  display: grid;
-  place-items: center;
+  display: block;
+  width: 2.75rem;
+  height: auto;
 }
 
 .brand-text {
